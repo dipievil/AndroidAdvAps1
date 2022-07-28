@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">AndroidAdvAps1</string>
+    <string name="value">value</string>
+    <string name="converter">Converter</string>
+    <string name="valor">Valor</string>
+    <string name="para">para</string>
+    <string name="de">De</string>
+    <string name="conversor_de_moedas">Conversor de Moedas</string>
 </resources>
