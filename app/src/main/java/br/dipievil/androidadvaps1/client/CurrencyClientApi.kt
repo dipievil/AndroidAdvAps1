@@ -7,7 +7,7 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-class CurrencyClientApi(val currencyService: CurrencyServices = ApiUtils().currencyServices) {
+class CurrencyClientApi(private val currencyService: CurrencyServices = ApiUtils().currencyServices) {
     fun getCurrencies(onSuccess: (currencies : JsonObject?) -> Unit,
                       onFailure: (error: String?) -> Unit)
     {
