@@ -14,7 +14,7 @@
         android:layout_marginTop="72dp"
         android:text="@string/conversor_de_moedas"
         android:textAlignment="center"
-        android:textSize="50dp"
+        android:textSize="50sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -27,56 +27,59 @@
 
         <TextView
             android:id="@+id/textView2"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/de" />
 
         <Spinner
             android:id="@+id/spFrom"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_width="126dp"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/coin"
+            android:minHeight="48dp" />
 
         <TextView
             android:id="@+id/textView3"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/para" />
 
         <Spinner
             android:id="@+id/spTo"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/coin"
+            android:minHeight="48dp" />
 
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="vertical">
 
         <TextView
             android:id="@+id/txtValor"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
             android:text="@string/valor" />
 
         <EditText
             android:id="@+id/etValueFrom"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
+            android:autofillHints="digite o valor"
+            android:hint="@string/value_type"
             android:inputType="number"
-            android:minWidth="100dp"
-            android:autofillHints="value"
-            android:hint="@string/value"
-            />
+            android:minWidth="100dp" />
 
     </LinearLayout>
 
     <Button
+        android:id="@+id/btConverter"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/converter"
-        android:id="@+id/btConverter">
+        android:text="@string/converter">
 
     </Button>
 
@@ -84,12 +87,9 @@
         android:id="@+id/tvResult"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
-
 
 </LinearLayout>

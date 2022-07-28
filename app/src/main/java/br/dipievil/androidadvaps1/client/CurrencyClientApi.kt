@@ -23,6 +23,7 @@ class CurrencyClientApi(private val currencyService: CurrencyServices = ApiUtils
 
     fun convert(currencyFrom : String,
                 currencyTo : String,
+                valueFrom : String,
                 onSuccess : (convertedValue : String?) -> Unit,
                 onFailure : (error : String?) -> Unit){
         currencyService.getCurrencyRate(currencyFrom,currencyTo).enqueue(object :
@@ -30,7 +31,7 @@ class CurrencyClientApi(private val currencyService: CurrencyServices = ApiUtils
             override fun onResponse(call: Call<JsonObject>, response: Response<JsonObject>) {
                 val data = response.body()?.entrySet()?.find { it.key == currencyTo }
                 val rate : Double = data?.value.toString().toDouble()
-                val conversion = currencyFrom.toDouble() * rate
+                val conversion = valueFrom.toDouble() * rate
 
                 onSuccess(conversion.toString())
             }
